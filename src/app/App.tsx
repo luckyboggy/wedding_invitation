@@ -1,5 +1,10 @@
 import React from "react";
+import MainPage from "../pages/Main/MainPage";
 
 export default function App() {
-  return <div>Wedding invitation</div>;
+  return (
+    <div>
+      <MainPage />
+    </div>
+  );
 }
