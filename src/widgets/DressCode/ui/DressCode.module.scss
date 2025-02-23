@@ -1,0 +1,17 @@
+.dressCode {
+  .wrapper {
+    background-color: var(--primary-color);
+    color: var(--primary-font-color);
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    .mainGreating {
+      font-size: 26px;
+    }
+    .greatingText {
+      p {
+        margin-top: 1rem;
+      }
+    }
+  }
+}
