@@ -4,7 +4,7 @@ import Greating from "../../widgets/Greetings/ui/Greating";
 import Timer from "../../widgets/Timer/ui/Timer";
 import DressCode from "../../widgets/DressCode/ui/DressCode";
 import TimeLine from "../../widgets/TimeLine/ui/TimeLine";
-import Locations from "../../widgets/Locations/ui/Locations";
+import Locations from "../../widgets/Locations/ui/locations/Locations";
 import Accommodation from "../../widgets/Accommodation/ui/Accommodation";
 import Wishlist from "../../widgets/Wishlist/ui/Wishlist";
 

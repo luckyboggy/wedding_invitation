@@ -17,12 +17,12 @@ export default function DressCode() {
         </div>
         <div className={cls.references}>
           <div className={cls.images}>
-            <img className={cls.img} src="" alt="Image 1" />
-            <img className={cls.img} src="" alt="Image 1" />
-            <img className={cls.img} src="" alt="Image 1" />
-            <img className={cls.img} src="" alt="Image 1" />
-            <img className={cls.img} src="" alt="Image 1" />
-            <img className={cls.img} src="" alt="Image 1" />
+            <img className={cls.img} src="#" alt="Image 1" />
+            <img className={cls.img} src="#" alt="Image 1" />
+            <img className={cls.img} src="#" alt="Image 1" />
+            <img className={cls.img} src="#" alt="Image 1" />
+            <img className={cls.img} src="#" alt="Image 1" />
+            <img className={cls.img} src="#" alt="Image 1" />
           </div>
         </div>
       </div>

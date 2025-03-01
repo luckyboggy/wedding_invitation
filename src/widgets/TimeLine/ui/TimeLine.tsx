@@ -33,7 +33,7 @@ export default function TimeLine() {
         </div>
         <div className={cls.schedule}>
           {schedule.map((item) => (
-            <div className={cls.scheduleItem}>
+            <div className={cls.scheduleItem} key={item.time}>
               <div className={cls.time}>
                 <h2>{item.time}</h2>
               </div>
