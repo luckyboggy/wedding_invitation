@@ -1,3 +1,7 @@
+// @use "../../../app/style/fonts.scss";
+
+//@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+
 .greating {
   .wrapper {
     background-color: var(--primary-color);
@@ -7,6 +11,9 @@
     border-radius: 1rem;
     .mainGreating {
       font-size: 26px;
+      font-family: var(--main-font-family);
+      //font-family: "Great Vibes", cursive;
+      font-weight: 500;
     }
     .greatingText {
       p {

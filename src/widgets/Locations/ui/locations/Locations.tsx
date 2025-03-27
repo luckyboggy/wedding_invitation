@@ -1,4 +1,3 @@
-import React from "react";
 import cls from "./Locations.module.scss";
 
 export default function Locations() {
@@ -26,7 +25,9 @@ export default function Locations() {
           <div className={cls.locationInfo}>
             <h3 className={cls.event}>ЭКО парк CANADA</h3>
             <p className={cls.time}>18.06.2025 14:00</p>
-            <p className={cls.addres}>Свердловская область, Нижнесергинский район</p>
+            <p className={cls.addres}>
+              Свердловская область, Нижнесергинский район
+            </p>
             <p className={cls.description}>Приезжаем, празднуем,</p>
           </div>
           <div className={cls.locationMap}>
@@ -38,8 +39,6 @@ export default function Locations() {
             ></iframe>
           </div>
         </div>
-
-       
       </div>
     </div>
   );

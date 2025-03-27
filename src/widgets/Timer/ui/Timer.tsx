@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import cls from "./Timer.module.scss";
 
 export default function Timer() {
   const targetDate = new Date("2025-06-18T11:30:00").getTime();
   const [remainingTime, setRemainingTime] = useState(
-    targetDate - new Date().getTime
+    targetDate - new Date().getTime()
   );
 
   useEffect(() => {
@@ -29,7 +29,7 @@ export default function Timer() {
       .toString()
       .padStart(2, "0");
     const seconds = (totalSeconds % 60).toString().padStart(2, "0");
-    return {days, hours, minutes, seconds};
+    return { days, hours, minutes, seconds };
   };
 
   return (
