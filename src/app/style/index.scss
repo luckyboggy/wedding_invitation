@@ -1,3 +1,7 @@
 @use "./reset.scss";
 @use "./breakpoint.scss";
 @use "./varisbles/global.scss";
+
+body {
+    font: var(--font-text-m)
+}
