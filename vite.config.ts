@@ -9,6 +9,10 @@ const __dirname = dirname(__filePath);
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  build: {
+    outDir: "dist",
+    emptyOutDir: true,
+  },
   resolve: {
     alias: {
       src: path.resolve(__dirname, "./src"),
@@ -18,4 +22,5 @@ export default defineConfig({
       shared: path.resolve(__dirname, "./src/shared"),
     },
   },
+  base: "/wedding_invitation",
 });
