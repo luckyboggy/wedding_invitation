@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import cls from "./Timer.module.scss";
+import Calendar from "src/shared/ui/Calendar/Calendar";
 
 export default function Timer() {
   const targetDate = new Date("2025-06-18T11:30:00").getTime();
@@ -35,26 +36,44 @@ export default function Timer() {
   return (
     <div className={cls.timer}>
       <div className={cls.wrapper}>
+        <Calendar
+          year={2025}
+          month={6}
+          holidays={[12, 13]}
+          highlightedDays={[18]}
+          occupiedDays={[19, 20]}
+        />
+        <div className={cls.dividingLine}></div>
+        <div className={cls.mainGreating}>
+          <p>До регистрации осталось</p>
+        </div>
+
         <div className={cls.timerWrapper}>
           <div className={cls.timeItem}>
-            <h1>{formatTime(remainingTime).days}</h1>
+            <p className={cls.timeItemNumber}>
+              {formatTime(remainingTime).days}
+            </p>
             <p>дней</p>
           </div>
           :
           <div className={cls.timeItem}>
-            <h1>{formatTime(remainingTime).hours}</h1>
+            <p className={cls.timeItemNumber}>
+              {formatTime(remainingTime).hours}
+            </p>
             <p>часов</p>
           </div>
           :
           <div className={cls.timeItem}>
-            <h1>{formatTime(remainingTime).minutes}</h1>
+            <p className={cls.timeItemNumber}>
+              {formatTime(remainingTime).minutes}
+            </p>
             <p>минут</p>
           </div>
-          :
+          {/* :
           <div className={cls.timeItem}>
-            <h1>{formatTime(remainingTime).seconds}</h1>
+            <h1 className={cls.timeItemNumber}>{formatTime(remainingTime).seconds}</h1>
             <p>секунд</p>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

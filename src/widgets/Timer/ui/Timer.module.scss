@@ -1,10 +1,27 @@
 .timer {
   .wrapper {
-    background-color: var(--primary-color);
+    //background-color: var(--primary-color);
     color: var(--primary-font-color);
     margin: 1rem;
     padding: 1rem;
-    border-radius: 1rem;
+    //border-radius: 1rem;
+    .dividingLine {
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(
+        to right,
+        transparent,
+        var(--primary-font-color),
+        transparent
+      );
+      margin: 10px auto;
+    }
+    .mainGreating {
+      text-align: center;
+      font: var(--font-heading-m);
+      text-transform: uppercase;
+    }
+
     .timerWrapper {
       display: grid;
       grid-template-columns: repeat(7, auto);
@@ -12,25 +29,25 @@
       justify-content: center;
       font-size: 2rem;
 
-
       .timeItem {
+        //margin-top: 1rem;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 1rem;
-        border-radius: 8px;
-        min-width: 80px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        padding: 0 1rem;
+        //border-radius: 8px;
+        //min-width: 80px;
+        //box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       }
 
-      h1 {
-        font-size: 2.5rem;
+      .timeItemNumber {
+        font: var(--font-heading-xl);
         font-weight: bold;
       }
 
       p {
-        font-size: 1rem;
+        font: var(--font-heading-s);
       }
 
       span {
