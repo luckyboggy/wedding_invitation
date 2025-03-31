@@ -1,18 +1,31 @@
 .greating {
+  margin-top: 2rem;
   .wrapper {
-    background-color: var(--primary-color);
+    //background-color: var(--primary-color);
     color: var(--primary-font-color);
     margin: 1rem;
     padding: 1rem;
     border-radius: 1rem;
     .mainGreating {
-      font-size: 26px;
-      font: var(--font-main-l)
+      text-align: center;
+      font: var(--font-heading-xl);
+      text-transform: uppercase;
+    }
+    .dividingLine {
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(
+        to right,
+        transparent,
+        var(--primary-font-color),
+        transparent
+      );
+      margin: 10px auto;
     }
     .greatingText {
+      text-align: center;
       p {
-        margin-top: 1rem;
-
+        //margin-top: 1rem;
       }
     }
     .dateTime {

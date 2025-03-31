@@ -3,5 +3,23 @@
 @use "./varisbles/global.scss";
 
 body {
-    font: var(--font-text-m)
+  font: var(--font-text-m);
+  h1 {
+    font-size: 30px;
+  }
+  h2 {
+    font-size: 30px;
+  }
+  h3 {
+    font-size: 24px;
+  }
+  h4 {
+    font-size: 20px;
+  }
+  h5 {
+    font-size: 16px;
+  }
+  h6 {
+    font-size: 14px;
+  }
 }

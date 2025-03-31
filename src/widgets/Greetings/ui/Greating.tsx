@@ -5,8 +5,9 @@ export default function Greating() {
     <div className={cls.greating}>
       <div className={cls.wrapper}>
         <div className={cls.mainGreating}>
-          <h1>Дорогие друзья и родные</h1>
+          <p>Дорогие гости</p>
         </div>
+        <div className={cls.dividingLine}></div>
         <div className={cls.greatingText}>
           <p>Мы приглашаем вас разделить с нами....</p>
           <p>
@@ -15,9 +16,7 @@ export default function Greating() {
             Natus!
           </p>
         </div>
-        <div className={cls.dateTime}>
-          <p>18.06.2025</p>
-        </div>
+
       </div>
     </div>
   );

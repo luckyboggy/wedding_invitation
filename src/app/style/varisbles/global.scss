@@ -9,28 +9,42 @@
 
   //--main-font-family: "Cormorant Infant", serif;
 
+  //--heading-font-family: "Cormorant Garamond", serif;
+  --heading-font-family: "Playfair Display SC", serif;
+  //--heading-font-family: "Libre Baskerville", serif;
+
   //normal
   --text-font-family: "Nunito", sans-serif;
 
   --font-size-s: 14px;
   --font-line-s: 20px;
   --font-main-s: var(--font-size-s) / var(--font-line-s) var(--main-font-family);
+  --font-heading-s: var(--font-size-s) / var(--font-line-s)
+    var(--heading-font-family);
   --font-text-s: var(--font-size-s) / var(--font-line-s) var(--text-font-family);
 
   --font-size-m: 18px;
   --font-line-m: 26px;
   --font-main-m: var(--font-size-m) / var(--font-line-m) var(--main-font-family);
+  --font-heading-m: var(--font-size-m) / var(--font-line-m)
+    var(--heading-font-family);
   --font-text-m: var(--font-size-m) / var(--font-line-m) var(--text-font-family);
 
   --font-size-l: 24px;
   --font-line-l: 42px;
   --font-main-l: var(--font-size-l) / var(--font-line-l) var(--main-font-family);
+  --font-heading-l: var(--font-size-l) / var(--font-line-l)
+    var(--heading-font-family);
   --font-text-l: var(--font-size-l) / var(--font-line-l) var(--text-font-family);
 
   --font-size-xl: 32px;
   --font-line-xl: 52px;
-  --font-main-xl: var(--font-size-xl) / var(--font-line-xl) var(--main-font-family);
-  --font-text-xl: var(--font-size-xl) / var(--font-line-xl) var(--text-font-family);
+  --font-main-xl: var(--font-size-xl) / var(--font-line-xl)
+    var(--main-font-family);
+  --font-heading-xl: var(--font-size-xl) / var(--font-line-xl)
+    var(--heading-font-family);
+  --font-text-xl: var(--font-size-xl) / var(--font-line-xl)
+    var(--text-font-family);
 
   // colors
   --basic-bg-color: white;
