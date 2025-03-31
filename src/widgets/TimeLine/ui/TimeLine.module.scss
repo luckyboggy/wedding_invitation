@@ -1,28 +1,59 @@
 .timeLine {
   .wrapper {
-    background-color: var(--secondary-color);
+    //background-color: var(--secondary-color);
     color: var(--primary-font-color);
     margin: 1rem;
     padding: 1rem;
     border-radius: 1rem;
     .title {
-      h2 {
-        text-align: right;
+      p {
+        text-align: center;
+        font: var(--font-heading-xl);
       }
     }
     .schedule {
       margin-top: 1rem;
       width: 100%;
       .scheduleItem {
-        margin-top: 0.5rem;
+        margin-top: 1rem;
         display: grid;
-        grid-template-columns: 1fr 3fr;
+        grid-template-columns: 1fr 4fr;
         gap: 1rem;
+
         .time {
           text-align: center;
+          font: var(--font-heading-l);
+          line-height: 1.2;
         }
         .info {
+          align-items: center;
+          font: var(--font-heading-l);
+          line-height: 1.2;
+          .description {
+            font: var(--font-text-s);
+          }
         }
+      }
+    }
+    .btn {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 1rem;
+      .detailBtn {
+        padding: 1rem;
+        font: var(--font-text-m);
+      }
+      .arrow {
+        height: 20px;
+        width: 20px;
+        fill: var(--primary-font-color);
+        transform: rotate(180deg);
+        transition: transform 0.2s ease-in-out;
+      }
+      .rotate {
+        transform: rotate(0);
       }
     }
   }

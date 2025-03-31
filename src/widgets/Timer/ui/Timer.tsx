@@ -44,7 +44,7 @@ export default function Timer() {
           occupiedDays={[19, 20]}
         />
         <div className={cls.dividingLine}></div>
-        <div className={cls.mainGreating}>
+        <div className={cls.title}>
           <p>До регистрации осталось</p>
         </div>
 
