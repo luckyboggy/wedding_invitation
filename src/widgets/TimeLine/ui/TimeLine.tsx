@@ -13,7 +13,7 @@ export default function TimeLine() {
   const schedule: TScheduleItem[] = [
     {
       time: "11:00",
-      event: "сбор в ЗАГСа",
+      event: "сбор в ЗАГСе",
       description: "ул. Карла-Либнихта, 3",
     },
     { time: "11:30", event: "церемония бракосочетания", status: "main" },

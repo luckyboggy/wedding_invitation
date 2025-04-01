@@ -13,6 +13,8 @@
   --heading-font-family: "Playfair Display SC", serif;
   //--heading-font-family: "Libre Baskerville", serif;
 
+  --number-font-family: "Libre Baskerville", serif;
+
   //normal
   --text-font-family: "Nunito", sans-serif;
 
@@ -22,6 +24,8 @@
   --font-heading-s: var(--font-size-s) / var(--font-line-s)
     var(--heading-font-family);
   --font-text-s: var(--font-size-s) / var(--font-line-s) var(--text-font-family);
+  --font-number-s: var(--font-size-s) / var(--font-line-s)
+    var(--number-font-family);
 
   --font-size-m: 18px;
   --font-line-m: 26px;
@@ -29,6 +33,8 @@
   --font-heading-m: var(--font-size-m) / var(--font-line-m)
     var(--heading-font-family);
   --font-text-m: var(--font-size-m) / var(--font-line-m) var(--text-font-family);
+  --font-number-m: var(--font-size-m) / var(--font-line-m)
+    var(--number-font-family);
 
   --font-size-l: 24px;
   --font-line-l: 42px;
@@ -36,6 +42,8 @@
   --font-heading-l: var(--font-size-l) / var(--font-line-l)
     var(--heading-font-family);
   --font-text-l: var(--font-size-l) / var(--font-line-l) var(--text-font-family);
+  --font-number-l: var(--font-size-l) / var(--font-line-l)
+    var(--number-font-family);
 
   --font-size-xl: 32px;
   --font-line-xl: 52px;
@@ -45,6 +53,8 @@
     var(--heading-font-family);
   --font-text-xl: var(--font-size-xl) / var(--font-line-xl)
     var(--text-font-family);
+  --font-number-xl: var(--font-size-xl) / var(--font-line-xl)
+    var(--number-font-family);
 
   // colors
   --basic-bg-color: white;
