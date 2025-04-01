@@ -1,3 +1,4 @@
+import DividingLine from "shared/ui/DividingLine/DividingLine";
 import cls from "./Greating.module.scss";
 
 export default function Greating() {
@@ -7,7 +8,7 @@ export default function Greating() {
         <div className={cls.mainGreating}>
           <p>Дорогие гости</p>
         </div>
-        <div className={cls.dividingLine}></div>
+        <DividingLine />
         <div className={cls.greatingText}>
           <p>Мы приглашаем вас разделить с нами....</p>
           <p>
@@ -16,7 +17,6 @@ export default function Greating() {
             Natus!
           </p>
         </div>
-
       </div>
     </div>
   );

@@ -1,13 +1,16 @@
 import { useState, useRef } from "react";
 import cls from "./Carousel.module.scss";
 
-import img1 from "../../../shared/assets/images/dressCode/1.jpg";
-import img2 from "../../../shared/assets/images/dressCode/2.jpg";
-import img3 from "../../../shared/assets/images/dressCode/3.jpg";
-import img4 from "../../../shared/assets/images/dressCode/4.jpg";
-import img5 from "../../../shared/assets/images/dressCode/5.jpg";
+import img1 from "shared/assets/images/dressCode/dc_1.jpg";
+import img2 from "shared/assets/images/dressCode/dc_2.jpg";
+import img3 from "shared/assets/images/dressCode/dc_3.jpg";
+import img4 from "shared/assets/images/dressCode/dc_4.jpg";
+import img5 from "shared/assets/images/dressCode/dc_5.jpg";
+import img6 from "shared/assets/images/dressCode/dc_6.jpg";
 
-const images = [img1, img2, img3, img4, img5];
+
+
+const images = [img1, img2, img3, img4, img5, img6];
 
 const Carousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);

@@ -7,6 +7,7 @@ import Accommodation from "widgets/Accommodation/ui/Accommodation";
 import Wishlist from "widgets/Wishlist/ui/Wishlist";
 import cls from "./MainPage.module.scss";
 import Start from "widgets/Start/ui/Start";
+import Questionnaire from "widgets/Questionnaire/ui/Questionnaire";
 
 export default function MainPage() {
   return (
@@ -17,6 +18,7 @@ export default function MainPage() {
         <Timer />
         <TimeLine />
         <DressCode />
+        <Questionnaire />
         <Locations />
         <Accommodation />
         <Wishlist />

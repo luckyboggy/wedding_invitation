@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import cls from "./Timer.module.scss";
 import Calendar from "src/shared/ui/Calendar/Calendar";
+import DividingLine from "src/shared/ui/DividingLine/DividingLine";
 
 export default function Timer() {
   const targetDate = new Date("2025-06-18T11:30:00").getTime();
@@ -43,7 +44,7 @@ export default function Timer() {
           highlightedDays={[18]}
           occupiedDays={[19, 20]}
         />
-        <div className={cls.dividingLine}></div>
+        <DividingLine />
         <div className={cls.title}>
           <p>До регистрации осталось</p>
         </div>
