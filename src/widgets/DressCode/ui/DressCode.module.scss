@@ -1,14 +1,24 @@
 .dressCode {
+  margin: 2rem 0 4rem;
   .wrapper {
-    background-color: var(--primary-color);
+    //background-color: var(--primary-color);
     color: var(--primary-font-color);
-    margin: 1rem;
-    padding: 1rem;
-    border-radius: 1rem;
+   // margin: 1rem 0;
+    //padding: 1rem;
+    //border-radius: 1rem;
     .title {
+      p {
+        text-align: center;
+        font: var(--font-heading-xl);
+        text-transform: uppercase;
+      }
     }
     .description {
-      margin-top: 1rem;
+      padding: 0 1rem;
+      p {
+        text-align: center;
+        margin-top: 1rem;
+      }
     }
     .references {
       margin-top: 1rem;

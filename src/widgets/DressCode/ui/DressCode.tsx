@@ -1,3 +1,4 @@
+import Carousel from "src/shared/ui/Carousel/Carousel";
 import cls from "./DressCode.module.scss";
 
 export default function DressCode() {
@@ -5,7 +6,7 @@ export default function DressCode() {
     <div className={cls.dressCode}>
       <div className={cls.wrapper}>
         <div className={cls.title}>
-          <h2>Дресс-код</h2>
+          <p>Дресс-код</p>
         </div>
         <div className={cls.description}>
           <p>
@@ -15,14 +16,15 @@ export default function DressCode() {
           </p>
         </div>
         <div className={cls.references}>
-          <div className={cls.images}>
+          <Carousel />
+          {/* <div className={cls.images}>
             <img className={cls.img} src="#" alt="Image 1" />
             <img className={cls.img} src="#" alt="Image 1" />
             <img className={cls.img} src="#" alt="Image 1" />
             <img className={cls.img} src="#" alt="Image 1" />
             <img className={cls.img} src="#" alt="Image 1" />
             <img className={cls.img} src="#" alt="Image 1" />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

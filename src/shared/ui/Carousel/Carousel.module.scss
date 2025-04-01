@@ -1,0 +1,42 @@
+.carousel {
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+
+  .track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+
+    .slide {
+      min-width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .image {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  .dots {
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: rgba(110, 102, 102, 0.5);
+      margin: 0 5px;
+      cursor: pointer;
+    }
+
+    .dot.active {
+      background-color: rgb(87, 85, 85);
+    }
+  }
+}
