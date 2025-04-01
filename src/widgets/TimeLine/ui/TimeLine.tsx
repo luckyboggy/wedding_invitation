@@ -13,23 +13,67 @@ export default function TimeLine() {
   const schedule: TScheduleItem[] = [
     {
       time: "11:00",
-      event: "сбор в ЗАГСе",
-      description: "ул. Карла-Либнихта, 3",
+      event: "ЗАГС",
+      //description: "ул. Карла-Либнихта, 3",
+      description: "сбор гостей и фуршет",
     },
-    { time: "11:30", event: "церемония бракосочетания", status: "main" },
-    { time: "12:00", event: "отъезд" },
+    {
+      time: "11:30",
+      event: "ЦЕРЕМОНИЯ",
+      description: "берем гортензии и платочки",
+      status: "main",
+    },
+    { time: "12:00", event: "ВЫЕЗД", description: "выезжаем в Канаду парк" },
     {
       time: "14:00",
-      event: "прибытие на площадку",
-      description: "эко-парк Canada",
+      event: "РАССЕЛЕНИЕ",
+      //description: "эко-парк Canada",
+      description: "располагаемся в домиках, отдыхаем",
     },
-    { time: "15:00", event: "welcome", status: "main" },
-    { time: "16:00", event: "церемония", status: "main" },
-    { time: "17:00", event: "фотосессия" },
-    { time: "18:00", event: "банкет", status: "main" },
-    { time: "20:00", event: "что-то ещё" },
-    { time: "22:00", event: "дискотека" },
-    { time: "23:00", event: "завершение", status: "main" },
+    {
+      time: "15:00",
+      event: "WELCOME",
+      status: "main",
+      description: "фуршет, фото, разговорчики",
+    },
+    {
+      time: "16:00",
+      event: "ВЫЕЗДНАЯ ЦЕРЕМОНИЯ",
+      status: "main",
+      description: "берем только платочки",
+    },
+    {
+      time: "16:30",
+      event: "ФОТОСЕССИЯ",
+      description: "делаем шикарное общее фото",
+    },
+    {
+      time: "17:00",
+      event: "БАНКЕТ",
+      status: "main",
+      description: "угощаемся вкусностями",
+    },
+    {
+      time: "21:00",
+      event: "ТОРТ",
+      description: "наслаждаемся чаем",
+    },
+    {
+      time: "22:00",
+      event: "ДИСКОТЕКА",
+      description: "танцуем до упаду",
+    },
+    {
+      time: "23:00",
+      event: "ЗАВЕРШЕНИЕ ВЕЧЕРА",
+      description: "делаем что то красивое и приятное",
+      status: "main",
+    },
+    {
+      time: "23:30",
+      event: "АВТЕПАТИ",
+      description: "вечеринка после вечеринки, для самый стойких",
+    },
   ];
 
   const [showAll, setShowAll] = useState(false);
@@ -44,7 +88,8 @@ export default function TimeLine() {
         <div className={cls.title}>
           <p>Программа дня</p>
         </div>
-        <div className={cls.schedule}>
+
+        {/* <div className={cls.schedule}>
           {filteredSchedule.map((item) => (
             <div className={cls.scheduleItem} key={item.time}>
               <div className={cls.time}>
@@ -54,13 +99,37 @@ export default function TimeLine() {
                 <div className={cls.event}>
                   <p>{item.event}</p>
                 </div>
-                {item.description && (
+                {item.description && showAll && (
                   <div className={cls.description}>{item.description}</div>
                 )}
               </div>
             </div>
           ))}
+        </div> */}
+
+        <div className={cls.schedule}>
+          {filteredSchedule.map((item) => (
+            <div className={cls.scheduleItem} key={item.time}>
+              <div className={cls.eventData}>
+                <div className={cls.time}>
+                  <p>{item.time}</p>
+                </div>
+                <div className={cls.event}>
+                  <p>{item.event}</p>
+                </div>
+              </div>
+              {showAll && (
+                <div className={cls.eventAddData}>
+                  <div className={cls.timeInfo}></div>
+                  <div className={cls.description}>
+                    <p>{item.description}</p>
+                  </div>
+                </div>
+              )}
+            </div>
+          ))}
         </div>
+
         <div className={cls.btn} onClick={() => setShowAll(!showAll)}>
           <div className={cls.detailBtn}>{showAll ? "Скрыть" : "Подробно"}</div>
           <ArrowIcon className={`${cls.arrow} ${showAll ? cls.rotate : ""}`} />

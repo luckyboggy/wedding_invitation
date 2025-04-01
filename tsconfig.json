@@ -9,6 +9,7 @@
     "baseUrl": "./",
     // "outDir": "./dist",
     "noEmit": true,
+    "lib": ["DOM", "ES2017", "ESNext"],
     "paths": {
       "src": ["src"],
       "src/*": ["src/*"],
