@@ -8,6 +8,7 @@ import Wishlist from "widgets/Wishlist/ui/Wishlist";
 import cls from "./MainPage.module.scss";
 import Start from "widgets/Start/ui/Start";
 import Questionnaire from "widgets/Questionnaire/ui/Questionnaire";
+import Flowers from "src/widgets/Flowers/ui/Flowers";
 
 export default function MainPage() {
   return (
@@ -17,8 +18,9 @@ export default function MainPage() {
         <Greating />
         <Timer />
         <TimeLine />
-        <DressCode />
         <Questionnaire />
+        <DressCode />
+        <Flowers />
         <Locations />
         <Accommodation />
         <Wishlist />

@@ -1,0 +1,32 @@
+.flowers {
+  .wrapper {
+    color: var(--primary-font-color);
+    margin: 1rem;
+    padding: 1rem;
+    .title {
+      text-align: center;
+      font: var(--font-heading-xl);
+      text-transform: uppercase;
+    }
+    .content {
+      margin: 1rem 0;
+      text-align: justify;
+      p {
+        margin: 0.5rem 0;
+      }
+      img {
+        width: 100%;
+      }
+      .links {
+        font: var(--font-text-l);
+        margin: 1rem 0;
+        a {
+          text-decoration: none;
+          color: var(--primary-font-color);
+          text-align: center;
+          margin: 2rem 0;
+        }
+      }
+    }
+  }
+}

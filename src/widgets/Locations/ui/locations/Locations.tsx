@@ -4,10 +4,13 @@ export default function Locations() {
   return (
     <div className={cls.locations}>
       <div className={cls.wrapper}>
-        <h2>Локации</h2>
+        <div className={cls.title}>
+          <p>Локации</p>
+        </div>
+
         <div className={cls.location}>
           <div className={cls.locationInfo}>
-            <h3 className={cls.event}>Регистрация в ЗАГСе</h3>
+            <p className={cls.event}>Регистрация в ЗАГСе</p>
             <p className={cls.time}>18.06.2025 11:30</p>
             <p className={cls.addres}>ул. Карла Либкнехта 3</p>
             <p className={cls.description}>Встречаемся там-то там-то...</p>

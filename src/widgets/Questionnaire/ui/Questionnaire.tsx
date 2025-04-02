@@ -14,19 +14,22 @@ const Questionnaire: FC = () => {
     firstName: "",
     secondName: "",
     isConfirm: false,
-    withCar: false,
+    transport: null as 'withCar' | 'needTransfer' | null, // Изменено на null или строку
     alcohol: [] as number[],
     customAlcohol: "",
   });
 
-  const [isSubmitted, setIsSubmitted] = useState(false); // Состояние для отправки формы
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const alcoholOptions: TAlcoholItem[] = [
     { id: 1, label: "Пиво", value: "beer" },
-    { id: 2, label: "Вино", value: "wine" },
-    { id: 3, label: "Водка", value: "vodka" },
-    { id: 4, label: "Виски", value: "whiskey" },
-    { id: 5, label: "Не пью", value: "none" },
+    { id: 2, label: "Вино белое", value: "white wine" },
+    { id: 3, label: "Вино красное", value: "red wine" },
+    { id: 4, label: "Мртини", value: "martini" },
+    { id: 5, label: "Коньяк", value: "cognac" },
+    { id: 6, label: "Водка", value: "vodka" },
+    { id: 7, label: "Виски", value: "whiskey" },
+    { id: 8, label: "Не пью", value: "none" },
   ];
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -34,6 +37,13 @@ const Questionnaire: FC = () => {
     setForm((prev) => ({
       ...prev,
       [name]: type === "checkbox" ? checked : value,
+    }));
+  };
+
+  const handleTransportChange = (option: 'withCar' | 'needTransfer' | null) => {
+    setForm((prev) => ({
+      ...prev,
+      transport: prev.transport === option ? null : option,
     }));
   };
 
@@ -48,7 +58,7 @@ const Questionnaire: FC = () => {
 
   const handleSubmit = () => {
     console.log("Форма отправлена:", form);
-    setIsSubmitted(true); // Меняем состояние на true, когда форма отправлена
+    setIsSubmitted(true);
   };
 
   return (
@@ -63,42 +73,55 @@ const Questionnaire: FC = () => {
             <div className={cls.title}>
               <p>Анкета гостя</p>
             </div>
-            <Input
-              label="Имя"
-              name="firstName"
-              value={form.firstName}
-              onChange={handleChange}
-            />
-            <Input
-              label="Фамилия"
-              name="secondName"
-              value={form.secondName}
-              onChange={handleChange}
-            />
+            <div className={cls.personData}>
+              <Input
+                label="Имя"
+                name="firstName"
+                value={form.firstName}
+                onChange={handleChange}
+              />
+              <Input
+                label="Фамилия"
+                name="secondName"
+                value={form.secondName}
+                onChange={handleChange}
+              />
+            </div>
             <Checkbox
               label="Подтверждаю участие"
               name="isConfirm"
               checked={form.isConfirm}
               onChange={handleChange}
             />
-            <Checkbox
-              label="Буду на машине"
-              name="withCar"
-              checked={form.withCar}
-              onChange={handleChange}
-            />
+            <div className={cls.transport}>
+              <legend>Транспорт</legend>
+              <Checkbox
+                label="Своя машина"
+                name="withCar"
+                checked={form.transport === 'withCar'}
+                onChange={() => handleTransportChange('withCar')}
+              />
+              <Checkbox
+                label="Нужен трансфер"
+                name="needTransfer"
+                checked={form.transport === 'needTransfer'}
+                onChange={() => handleTransportChange('needTransfer')}
+              />
+            </div>
             <fieldset>
               <legend>Предпочтения в алкоголе:</legend>
-              {alcoholOptions.map(({ id, label, value }) => (
-                <div className={cls.cb} key={id}>
-                  <Checkbox
-                    label={label}
-                    name={value}
-                    checked={form.alcohol.includes(id)}
-                    onChange={() => handleAlcoholChange(id)}
-                  />
-                </div>
-              ))}
+              <div className={cls.alcoholList}>
+                {alcoholOptions.map(({ id, label, value }) => (
+                  <div className={cls.alcoholItem} key={id}>
+                    <Checkbox
+                      label={label}
+                      name={value}
+                      checked={form.alcohol.includes(id)}
+                      onChange={() => handleAlcoholChange(id)}
+                    />
+                  </div>
+                ))}
+              </div>
               <Input
                 label="Предложите свой вариант"
                 name="customAlcohol"
