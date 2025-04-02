@@ -1,0 +1,14 @@
+.textInput {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  //gap: 0.5rem;
+  font: var(--font-text-s);
+
+  input {
+    padding: 0.5rem;
+    font: var(--font-text-m);
+    border: 1px solid var(--primary-font-color);
+    border-radius: 5px;
+  }
+}
