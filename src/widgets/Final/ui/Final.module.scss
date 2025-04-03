@@ -1,0 +1,14 @@
+.final {
+  margin: 2rem;
+  .wrapper {
+    margin: 1rem;
+    color: var(--primary-font-color);
+    .title {
+      p {
+        text-align: center;
+        font: var(--font-heading-xl);
+        text-transform: uppercase;
+      }
+    }
+  }
+}

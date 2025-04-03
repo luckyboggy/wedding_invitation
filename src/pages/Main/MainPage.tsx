@@ -9,6 +9,8 @@ import cls from "./MainPage.module.scss";
 import Start from "widgets/Start/ui/Start";
 import Questionnaire from "widgets/Questionnaire/ui/Questionnaire";
 import Flowers from "src/widgets/Flowers/ui/Flowers";
+import Contacts from "src/widgets/Contacts/ui/Contacts";
+import Final from "src/widgets/Final/ui/Final";
 
 export default function MainPage() {
   return (
@@ -22,8 +24,10 @@ export default function MainPage() {
         <DressCode />
         <Flowers />
         <Locations />
-        <Accommodation />
-        <Wishlist />
+        <Contacts />
+        <Final />
+        {/* <Accommodation />
+        <Wishlist /> */}
       </div>
     </div>
   );

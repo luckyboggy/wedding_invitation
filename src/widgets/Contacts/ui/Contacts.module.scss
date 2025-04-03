@@ -1,0 +1,23 @@
+.contacts {
+  margin: 2rem 0 4rem;
+  .wrapper {
+    margin: 1rem;
+    padding: 1rem;
+    color: var(--primary-font-color);
+    .title {
+      p {
+        text-align: center;
+        font: var(--font-heading-xl);
+        text-transform: uppercase;
+      }
+    }
+    .content {
+      text-align: center;
+      margin-top: 1rem;
+     .number {
+        margin-top: 1rem;
+        font: var(--font-text-l);
+     }
+    }
+  }
+}
