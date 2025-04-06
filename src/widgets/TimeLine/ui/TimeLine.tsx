@@ -89,24 +89,6 @@ export default function TimeLine() {
           <p>Программа дня</p>
         </div>
 
-        {/* <div className={cls.schedule}>
-          {filteredSchedule.map((item) => (
-            <div className={cls.scheduleItem} key={item.time}>
-              <div className={cls.time}>
-                <p>{item.time}</p>
-              </div>
-              <div className={cls.info}>
-                <div className={cls.event}>
-                  <p>{item.event}</p>
-                </div>
-                {item.description && showAll && (
-                  <div className={cls.description}>{item.description}</div>
-                )}
-              </div>
-            </div>
-          ))}
-        </div> */}
-
         <div className={cls.schedule}>
           {filteredSchedule.map((item) => (
             <div className={cls.scheduleItem} key={item.time}>

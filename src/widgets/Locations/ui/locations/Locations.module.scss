@@ -3,32 +3,61 @@
     //background-color: var(--secondary-color);
     color: var(--primary-font-color);
     margin: 1rem;
-    //padding: 1rem;
+    padding: 1rem;
     border-radius: 1rem;
     .title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      cursor: pointer;
+
       p {
         text-align: center;
         font: var(--font-heading-xl);
         text-transform: uppercase;
       }
+
+      .arrow {
+        height: 30px;
+        width: 30px;
+        fill: var(--primary-font-color);
+        transform: rotate(180deg);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .rotate {
+        transform: rotate(0deg);
+      }
     }
-    .location {
-      margin-top: 1rem;
-      .locationInfo {
-        text-align: center;
-        .addres {
-          margin-top: 0.5rem;
+    .content {
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      transition: max-height 0.5s ease, opacity 0.5s ease;
+      will-change: max-height, opacity;
+      .location {
+        margin-top: 1rem;
+        .locationInfo {
+          text-align: center;
+          .addres {
+            margin-top: 0.5rem;
+          }
+          .description {
+            margin-top: 0.5rem;
+          }
         }
-        .description {
-          margin-top: 0.5rem;
+      }
+      .locationMap {
+        margin-top: 1rem;
+        iframe {
+          border-radius: 1rem;
         }
       }
     }
-    .locationMap {
-      margin-top: 1rem;
-      iframe {
-        border-radius: 1rem;
-      }
+    .open {
+      max-height: 1000px;
+      opacity: 1;
     }
   }
 }

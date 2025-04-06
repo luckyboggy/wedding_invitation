@@ -1,16 +1,24 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import cls from "./Flowers.module.scss";
 
 import img from "shared/assets/images/gortenzia.jpg";
+import ArrowIcon from "shared/assets/images/svg/arrow.svg?react";
 
 const Flowers: FC = () => {
+  const [show, setShow] = useState(false);
+
+  const showToggle = () => {
+    setShow((prev) => !prev);
+  };
+
   return (
     <div className={cls.flowers}>
       <div className={cls.wrapper}>
-        <div className={cls.title}>
+        <div className={cls.title} onClick={showToggle}>
           <p>Цветы и подарки</p>
+          <ArrowIcon className={`${cls.arrow} ${show ? cls.rotate : ""}`} />
         </div>
-        <div className={cls.content}>
+        <div className={`${cls.content} ${show ? cls.open : ""}`}>
           <p>
             Мы будем очень рады, если вы подарите нам на регистрацию в ЗАГСе
             цветы: белые или зеленые гортензии! Мы хотим добавить их в декор и
@@ -31,6 +39,7 @@ const Flowers: FC = () => {
               rel="noopener noreferrer"
             >
               <p>D&K Flowers House</p>
+              <ArrowIcon className={cls.linkArrow}/>
             </a>
             <a
               href="https://vk.com/teddyflowers?ysclid=m905ham90560858298"
@@ -38,6 +47,7 @@ const Flowers: FC = () => {
               rel="noopener noreferrer"
             >
               <p>TEDDY FLOWERS</p>
+              <ArrowIcon className={cls.linkArrow}/>
             </a>
             <a
               href="https://theatre-flowers.ru/"
@@ -45,6 +55,7 @@ const Flowers: FC = () => {
               rel="noopener noreferrer"
             >
               <p>Театр цветов</p>
+              <ArrowIcon className={cls.linkArrow}/>
             </a>
           </div>
 
