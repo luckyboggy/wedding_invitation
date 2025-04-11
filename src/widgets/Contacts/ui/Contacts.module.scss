@@ -1,8 +1,7 @@
 .contacts {
-  margin: 2rem 0 4rem;
+  margin-top: 2rem;
   .wrapper {
-    margin: 1rem;
-    padding: 1rem;
+    padding: 0 2rem;
     color: var(--primary-font-color);
     .title {
       p {
@@ -14,10 +13,10 @@
     .content {
       text-align: center;
       margin-top: 1rem;
-     .number {
+      .number {
         margin-top: 1rem;
         font: var(--font-text-l);
-     }
+      }
     }
   }
 }

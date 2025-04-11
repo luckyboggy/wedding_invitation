@@ -9,28 +9,28 @@ type TAlcoholItem = {
   value: string;
 };
 
+const alcoholOptions: TAlcoholItem[] = [
+  { id: 1, label: "Пиво", value: "beer" },
+  { id: 2, label: "Вино белое", value: "white wine" },
+  { id: 3, label: "Вино красное", value: "red wine" },
+  { id: 4, label: "Мртини", value: "martini" },
+  { id: 5, label: "Коньяк", value: "cognac" },
+  { id: 6, label: "Водка", value: "vodka" },
+  { id: 7, label: "Виски", value: "whiskey" },
+  { id: 8, label: "Не пью", value: "none" },
+];
+
 const Questionnaire: FC = () => {
   const [form, setForm] = useState({
     firstName: "",
     secondName: "",
     isConfirm: false,
-    transport: null as 'withCar' | 'needTransfer' | null, // Изменено на null или строку
+    transport: null as "withCar" | "needTransfer" | null, // Изменено на null или строку
     alcohol: [] as number[],
     customAlcohol: "",
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const alcoholOptions: TAlcoholItem[] = [
-    { id: 1, label: "Пиво", value: "beer" },
-    { id: 2, label: "Вино белое", value: "white wine" },
-    { id: 3, label: "Вино красное", value: "red wine" },
-    { id: 4, label: "Мртини", value: "martini" },
-    { id: 5, label: "Коньяк", value: "cognac" },
-    { id: 6, label: "Водка", value: "vodka" },
-    { id: 7, label: "Виски", value: "whiskey" },
-    { id: 8, label: "Не пью", value: "none" },
-  ];
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
@@ -40,7 +40,7 @@ const Questionnaire: FC = () => {
     }));
   };
 
-  const handleTransportChange = (option: 'withCar' | 'needTransfer' | null) => {
+  const handleTransportChange = (option: "withCar" | "needTransfer" | null) => {
     setForm((prev) => ({
       ...prev,
       transport: prev.transport === option ? null : option,
@@ -98,14 +98,14 @@ const Questionnaire: FC = () => {
               <Checkbox
                 label="Своя машина"
                 name="withCar"
-                checked={form.transport === 'withCar'}
-                onChange={() => handleTransportChange('withCar')}
+                checked={form.transport === "withCar"}
+                onChange={() => handleTransportChange("withCar")}
               />
               <Checkbox
                 label="Нужен трансфер"
                 name="needTransfer"
-                checked={form.transport === 'needTransfer'}
-                onChange={() => handleTransportChange('needTransfer')}
+                checked={form.transport === "needTransfer"}
+                onChange={() => handleTransportChange("needTransfer")}
               />
             </div>
             <fieldset>

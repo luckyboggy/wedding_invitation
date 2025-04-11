@@ -1,10 +1,9 @@
 .locations {
+  margin-top: 2rem;
   .wrapper {
-    //background-color: var(--secondary-color);
     color: var(--primary-font-color);
-    margin: 1rem;
-    padding: 1rem;
-    border-radius: 1rem;
+    padding: 0 2rem;
+
     .title {
       display: flex;
       justify-content: center;

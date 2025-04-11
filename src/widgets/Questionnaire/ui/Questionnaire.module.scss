@@ -3,8 +3,7 @@
 
   .wrapper {
     color: var(--primary-font-color);
-    margin: 1rem;
-    padding: 1rem;
+    padding: 0 2rem;
 
     .form {
       display: flex;
@@ -14,7 +13,6 @@
         text-align: center;
         font: var(--font-heading-xl);
         text-transform: uppercase;
-        //margin-bottom: 1rem;
       }
 
       .personData {

@@ -1,81 +1,81 @@
-import { useState } from "react";
-import cls from "./TimeLine.module.scss";
+import { FC, useState } from "react";
 import ArrowIcon from "shared/assets/images/svg/arrow.svg?react";
+import cls from "./TimeLine.module.scss";
 
-export default function TimeLine() {
-  type TScheduleItem = {
-    time: string;
-    event: string;
-    description?: string;
-    status?: string;
-  };
+type TScheduleItem = {
+  time: string;
+  event: string;
+  description?: string;
+  status?: string;
+};
 
-  const schedule: TScheduleItem[] = [
-    {
-      time: "11:00",
-      event: "ЗАГС",
-      //description: "ул. Карла-Либнихта, 3",
-      description: "сбор гостей и фуршет",
-    },
-    {
-      time: "11:30",
-      event: "ЦЕРЕМОНИЯ",
-      description: "берем гортензии и платочки",
-      status: "main",
-    },
-    { time: "12:00", event: "ВЫЕЗД", description: "выезжаем в Канаду парк" },
-    {
-      time: "14:00",
-      event: "РАССЕЛЕНИЕ",
-      //description: "эко-парк Canada",
-      description: "располагаемся в домиках, отдыхаем",
-    },
-    {
-      time: "15:00",
-      event: "WELCOME",
-      status: "main",
-      description: "фуршет, фото, разговорчики",
-    },
-    {
-      time: "16:00",
-      event: "ВЫЕЗДНАЯ ЦЕРЕМОНИЯ",
-      status: "main",
-      description: "берем только платочки",
-    },
-    {
-      time: "16:30",
-      event: "ФОТОСЕССИЯ",
-      description: "делаем шикарное общее фото",
-    },
-    {
-      time: "17:00",
-      event: "БАНКЕТ",
-      status: "main",
-      description: "угощаемся вкусностями",
-    },
-    {
-      time: "21:00",
-      event: "ТОРТ",
-      description: "наслаждаемся чаем",
-    },
-    {
-      time: "22:00",
-      event: "ДИСКОТЕКА",
-      description: "танцуем до упаду",
-    },
-    {
-      time: "23:00",
-      event: "ЗАВЕРШЕНИЕ ВЕЧЕРА",
-      description: "делаем что то красивое и приятное",
-      status: "main",
-    },
-    {
-      time: "23:30",
-      event: "АВТЕПАТИ",
-      description: "вечеринка после вечеринки, для самый стойких",
-    },
-  ];
+const schedule: TScheduleItem[] = [
+  {
+    time: "11:00",
+    event: "ЗАГС",
+    //description: "ул. Карла-Либнихта, 3",
+    description: "сбор гостей и фуршет",
+  },
+  {
+    time: "11:30",
+    event: "ЦЕРЕМОНИЯ",
+    description: "берем гортензии и платочки",
+    status: "main",
+  },
+  { time: "12:00", event: "ВЫЕЗД", description: "выезжаем в Канаду парк" },
+  {
+    time: "14:00",
+    event: "РАССЕЛЕНИЕ",
+    //description: "эко-парк Canada",
+    description: "располагаемся в домиках, отдыхаем",
+  },
+  {
+    time: "15:00",
+    event: "WELCOME",
+    status: "main",
+    description: "фуршет, фото, разговорчики",
+  },
+  {
+    time: "16:00",
+    event: "ВЫЕЗДНАЯ ЦЕРЕМОНИЯ",
+    status: "main",
+    description: "берем только платочки",
+  },
+  {
+    time: "16:30",
+    event: "ФОТОСЕССИЯ",
+    description: "делаем шикарное общее фото",
+  },
+  {
+    time: "17:00",
+    event: "БАНКЕТ",
+    status: "main",
+    description: "угощаемся вкусностями",
+  },
+  {
+    time: "21:00",
+    event: "ТОРТ",
+    description: "наслаждаемся чаем",
+  },
+  {
+    time: "22:00",
+    event: "ДИСКОТЕКА",
+    description: "танцуем до упаду",
+  },
+  {
+    time: "23:00",
+    event: "ЗАВЕРШЕНИЕ ВЕЧЕРА",
+    description: "делаем что то красивое и приятное",
+    status: "main",
+  },
+  {
+    time: "23:30",
+    event: "АВТЕПАТИ",
+    description: "вечеринка после вечеринки, для самый стойких",
+  },
+];
 
+const TimeLine: FC = () => {
   const [showAll, setShowAll] = useState(false);
 
   const filteredSchedule = showAll
@@ -119,4 +119,6 @@ export default function TimeLine() {
       </div>
     </div>
   );
-}
+};
+
+export default TimeLine;

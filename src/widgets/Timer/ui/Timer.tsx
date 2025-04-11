@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
-import cls from "./Timer.module.scss";
+import { useState, useEffect, FC } from "react";
 import Calendar from "src/shared/ui/Calendar/Calendar";
 import DividingLine from "src/shared/ui/DividingLine/DividingLine";
+import cls from "./Timer.module.scss";
 
-export default function Timer() {
+const Timer: FC = () => {
   const targetDate = new Date("2025-06-18T11:30:00").getTime();
   const [remainingTime, setRemainingTime] = useState(
     targetDate - new Date().getTime()
@@ -79,4 +79,6 @@ export default function Timer() {
       </div>
     </div>
   );
-}
+};
+
+export default Timer;

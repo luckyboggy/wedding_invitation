@@ -1,7 +1,8 @@
+import { FC } from "react";
 import DividingLine from "shared/ui/DividingLine/DividingLine";
 import cls from "./Greating.module.scss";
 
-export default function Greating() {
+const Greating: FC = () => {
   return (
     <div className={cls.greating}>
       <div className={cls.wrapper}>
@@ -20,4 +21,6 @@ export default function Greating() {
       </div>
     </div>
   );
-}
+};
+
+export default Greating;

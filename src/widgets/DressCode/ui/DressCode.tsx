@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import Carousel from "src/shared/ui/Carousel/Carousel";
-import cls from "./DressCode.module.scss";
-
 import ArrowIcon from "shared/assets/images/svg/arrow.svg?react";
 
-export default function DressCode() {
+import cls from "./DressCode.module.scss";
+
+const DressCode: FC = () => {
   const [show, setShow] = useState(false);
 
   const showToggle = () => {
@@ -33,4 +33,6 @@ export default function DressCode() {
       </div>
     </div>
   );
-}
+};
+
+export default DressCode;
