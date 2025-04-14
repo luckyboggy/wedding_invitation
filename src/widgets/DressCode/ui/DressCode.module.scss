@@ -47,12 +47,54 @@
       }
 
       .references {
+        margin-top: 2rem;
+      }
+      .moreDetails {
         margin-top: 1rem;
+        padding: 0 2rem;
+        .switcher {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          margin: 1rem 0;
+          .switchItem {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font: var(--font-heading-l);
+            cursor: pointer;
+          }
+          .active {
+            text-decoration: underline;
+            text-underline-offset: 6px;
+          }
+        }
+        .switchContent {
+          opacity: 1;
+          transition: opacity 0.3s ease;
+          .wCase,
+          .mCase {
+            .sum {
+              margin-top: 1rem;
+              ul {
+                padding: 1rem 2rem;
+              }
+            }
+          }
+        }
+        .fadeOut {
+          opacity: 0;
+          transition: opacity 0.3s ease;
+        }
+
+        .fadeIn {
+          opacity: 1;
+          transition: opacity 0.3s ease;
+        }
       }
     }
 
     .open {
-      max-height: 1000px;
+      max-height: 1400px;
       opacity: 1;
     }
   }

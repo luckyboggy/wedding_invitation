@@ -15,7 +15,7 @@ const alcoholOptions: TAlcoholItem[] = [
   { id: 1, label: "Пиво", value: "beer" },
   { id: 2, label: "Вино белое", value: "white wine" },
   { id: 3, label: "Вино красное", value: "red wine" },
-  { id: 4, label: "Мртини", value: "martini" },
+  { id: 4, label: "Мартини", value: "martini" },
   { id: 5, label: "Коньяк", value: "cognac" },
   { id: 6, label: "Водка", value: "vodka" },
   { id: 7, label: "Виски", value: "whiskey" },
