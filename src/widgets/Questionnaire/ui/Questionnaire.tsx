@@ -3,6 +3,7 @@ import cls from "./Questionnaire.module.scss";
 import Input from "src/shared/ui/Input/Input";
 import Checkbox from "src/shared/ui/Checkbox/Checkbox";
 import Modal from "src/shared/ui/Modal/Modal";
+import AcceptData from "src/shared/ui/AcceptData/AcceptData";
 
 type TAlcoholItem = {
   id: number;
@@ -61,12 +62,25 @@ const Questionnaire: FC = () => {
   const handleSubmit = () => {
     console.log("Форма отправлена:", form);
     setIsSubmitted(true);
+    setForm({
+      firstName: "",
+      secondName: "",
+      isConfirm: false,
+      transport: null,
+      alcohol: [],
+      customAlcohol: "",
+      favSong: "",
+    });
   };
 
   return (
     <div className={cls.questionnaire}>
       <div className={cls.wrapper}>
-        {isSubmitted && <Modal onClose={setIsSubmitted} />}
+        {isSubmitted && (
+          <Modal onClose={setIsSubmitted}>
+            <AcceptData />
+          </Modal>
+        )}
         <div className={cls.form}>
           <div className={cls.title}>
             <p>Анкета гостя</p>

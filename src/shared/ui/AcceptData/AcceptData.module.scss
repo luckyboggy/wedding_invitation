@@ -1,0 +1,20 @@
+.acceptData {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    .ok {
+      width: 100px;
+      height: 100px;
+      stroke: var(--primary-font-color);
+      //color: var(--primary-font-color);
+    }
+    .thanks {
+      margin: 0.5rem;
+      font: var(--font-heading-xl);
+    }
+  }
+}
