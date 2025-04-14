@@ -66,7 +66,7 @@ const Questionnaire: FC = () => {
   return (
     <div className={cls.questionnaire}>
       <div className={cls.wrapper}>
-        {isSubmitted && <Modal />}
+        {isSubmitted && <Modal onClose={setIsSubmitted} />}
         <div className={cls.form}>
           <div className={cls.title}>
             <p>Анкета гостя</p>
@@ -127,7 +127,6 @@ const Questionnaire: FC = () => {
               onChange={handleChange}
             />
             <Input
-              // label="Предложите свой вариант"
               label={
                 <>
                   Любимая песня
