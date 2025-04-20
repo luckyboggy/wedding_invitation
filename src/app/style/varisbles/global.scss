@@ -45,8 +45,8 @@
   --font-number-l: var(--font-size-l) / var(--font-line-l)
     var(--number-font-family);
 
-  --font-size-xl: 32px;
-  --font-line-xl: 42px;
+  --font-size-xl: 30px;
+  --font-line-xl: 38px;
   --font-main-xl: var(--font-size-xl) / var(--font-line-xl)
     var(--main-font-family);
   --font-heading-xl: var(--font-size-xl) / var(--font-line-xl)
@@ -54,6 +54,17 @@
   --font-text-xl: var(--font-size-xl) / var(--font-line-xl)
     var(--text-font-family);
   --font-number-xl: var(--font-size-xl) / var(--font-line-xl)
+    var(--number-font-family);
+
+  --font-size-xxl: 40px;
+  --font-line-xxl: 50px;
+  --font-main-xxl: var(--font-size-xxl) / var(--font-line-xxl)
+    var(--main-font-family);
+  --font-heading-xxl: var(--font-size-xxl) / var(--font-line-xxl)
+    var(--heading-font-family);
+  --font-text-xxl: var(--font-size-xxl) / var(--font-line-xxl)
+    var(--text-font-family);
+  --font-number-xxl: var(--font-size-xxl) / var(--font-line-xxl)
     var(--number-font-family);
 
   // colors

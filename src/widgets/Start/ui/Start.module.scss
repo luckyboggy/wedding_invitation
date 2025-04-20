@@ -31,23 +31,28 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    font: var(--font-heading-xl);
+    font: var(--font-heading-xxl);
     text-transform: uppercase;
     opacity: 0;
     animation: fadeIn 1s ease-in forwards;
+    //
+    color: white;
   }
   .date {
     position: absolute;
-    bottom: 0;
+    //bottom: 0;
     padding: 1rem;
     width: 100%;
     display: flex;
     justify-content: center;
-    font: var(--font-number-xl);
+    //font: var(--font-number-xl);
     text-transform: uppercase;
     color: white;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    //text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
     opacity: 0;
     animation: fadeIn 1s ease-in forwards;
+    //
+    top: 60px;
+    font: var(--font-text-l);
   }
 }

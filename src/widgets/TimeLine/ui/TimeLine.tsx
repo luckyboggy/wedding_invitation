@@ -30,19 +30,19 @@ const schedule: TScheduleItem[] = [
     description: "располагаемся в домиках, отдыхаем",
   },
   {
-    time: "15:00",
+    time: "14:00",
     event: "WELCOME",
     status: "main",
     description: "фуршет, фото, разговорчики",
   },
   {
-    time: "16:00",
+    time: "15:45",
     event: "ВЫЕЗДНАЯ ЦЕРЕМОНИЯ",
     status: "main",
     description: "берем только платочки",
   },
   {
-    time: "16:30",
+    time: "16:15",
     event: "ФОТОСЕССИЯ",
     description: "делаем шикарное общее фото",
   },

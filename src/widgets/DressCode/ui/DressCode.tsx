@@ -87,10 +87,7 @@ const DressCode: FC = () => {
                         <span>Длина: любая</span>
                       </li>
                       <li>
-                        <span>Светлое: не белое</span>
-                      </li>
-                      <li>
-                        <span>Цвет: не чёрный</span>
+                        <span>Цвет: не белое, не черное</span>
                       </li>
                       <li>
                         <span>
@@ -120,10 +117,7 @@ const DressCode: FC = () => {
                         <span>Длина: не шорты</span>
                       </li>
                       <li>
-                        <span>Светлое: можно белое</span>
-                      </li>
-                      <li>
-                        <span>Цвет: можно чёрный</span>
+                        <span>Цвет: лёгкие летние оттенки</span>
                       </li>
                       <li>
                         <span>Возможно разный верх и низ</span>
