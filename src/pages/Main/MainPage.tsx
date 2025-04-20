@@ -11,6 +11,8 @@ import Questionnaire from "widgets/Questionnaire/ui/Questionnaire";
 import Flowers from "src/widgets/Flowers/ui/Flowers";
 import Contacts from "src/widgets/Contacts/ui/Contacts";
 import Final from "src/widgets/Final/ui/Final";
+import AreaRules from "src/widgets/AreaRules/ui/AreaRules";
+import SecondDay from "src/widgets/SecondDay/ui/SecondDay";
 
 export default function MainPage() {
   return (
@@ -24,6 +26,8 @@ export default function MainPage() {
         <DressCode />
         <Flowers />
         <Locations />
+        <AreaRules />
+        <SecondDay />
         <Contacts />
         <Final />
         {/* <Accommodation />
