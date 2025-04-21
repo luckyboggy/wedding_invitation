@@ -6,7 +6,7 @@ const Final: FC = () => {
     <div className={cls.final}>
       <div className={cls.wrapper}>
         <div className={cls.title}>
-          <p>Мы Вас Ждём!</p>
+          <p>До встречи!</p>
         </div>
       </div>
     </div>

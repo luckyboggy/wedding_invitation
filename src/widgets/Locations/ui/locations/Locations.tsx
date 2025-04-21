@@ -23,7 +23,7 @@ export default function Locations() {
               <p className={cls.event}>Регистрация в ЗАГСе</p>
               <p className={cls.time}>18.06.2025 11:30</p>
               <p className={cls.addres}>ул. Карла Либкнехта 3</p>
-              <p className={cls.description}>Встречаемся там-то там-то...</p>
+              <p className={cls.description}>Встречаемся в 11:00</p>
             </div>
             <div className={cls.locationMap}>
               <iframe

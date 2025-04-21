@@ -11,11 +11,10 @@ const Greating: FC = () => {
         </div>
         <DividingLine />
         <div className={cls.greatingText}>
-          <p>Мы приглашаем вас разделить с нами....</p>
+          <p>Мы приглашаем вас разделить с нами особенный день.</p>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
-            earum labore totam quasi magnam ipsam mollitia esse, quia excepturi?
-            Natus!
+            С нетерпением ждем возможности отпраздновать это событие в
+            кругу самых близких и дорогих нам людей.
           </p>
         </div>
       </div>

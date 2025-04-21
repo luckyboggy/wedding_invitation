@@ -13,6 +13,7 @@ import Contacts from "src/widgets/Contacts/ui/Contacts";
 import Final from "src/widgets/Final/ui/Final";
 import AreaRules from "src/widgets/AreaRules/ui/AreaRules";
 import SecondDay from "src/widgets/SecondDay/ui/SecondDay";
+import DividingLine from "src/shared/ui/DividingLine/DividingLine";
 
 export default function MainPage() {
   return (
@@ -28,7 +29,11 @@ export default function MainPage() {
         <Locations />
         <AreaRules />
         <SecondDay />
+        <br/>
+        <DividingLine />
         <Contacts />
+        <br/>
+        <DividingLine />
         <Final />
         {/* <Accommodation />
         <Wishlist /> */}

@@ -25,30 +25,42 @@ const alcoholOptions: TAlcoholItem[] = [
 const formUrl =
   "https://docs.google.com/forms/d/e/1FAIpQLSf9EovzzWxsiJDx7nZ9p_5tpvvbhz5-Z6bOBzZSvN3nLdSqAg/formResponse";
 
-const Questionnaire: FC = () => {
-  const [form, setForm] = useState({
-    firstName: "",
-    secondName: "",
-    isConfirm: false,
-    transport: null as "withCar" | "needTransfer" | null,
-    alcohol: [] as number[],
-    customAlcohol: "",
-    favSong: "",
-  });
+type FormState = {
+  firstName: string;
+  secondName: string;
+  isConfirm: boolean;
+  transport: "withCar" | "needTransfer" | null;
+  alcohol: number[];
+  customAlcohol: string;
+  favSong: string;
+};
 
-  const [errors, setErrors] = useState<Record<string, string>>({});
+const initialForm: FormState = {
+  firstName: "",
+  secondName: "",
+  isConfirm: false,
+  transport: null,
+  alcohol: [],
+  customAlcohol: "",
+  favSong: "",
+};
+
+const Questionnaire: FC = () => {
+  const [form, setForm] = useState<FormState>(initialForm);
+  const [errors, setErrors] = useState<Record<keyof FormState, string>>({} as any);
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
+
     setForm((prev) => ({
       ...prev,
       [name]: type === "checkbox" ? checked : value,
     }));
   };
 
-  const handleTransportChange = (option: "withCar" | "needTransfer" | null) => {
+  const handleTransportChange = (option: "withCar" | "needTransfer") => {
     setForm((prev) => ({
       ...prev,
       transport: prev.transport === option ? null : option,
@@ -65,21 +77,24 @@ const Questionnaire: FC = () => {
   };
 
   const validate = () => {
-    const newErrors: Record<string, string> = {};
+    const newErrors = {} as Record<keyof FormState, string>;
+
     if (!form.firstName.trim()) newErrors.firstName = "Введите имя";
     if (!form.secondName.trim()) newErrors.secondName = "Введите фамилию";
     if (!form.isConfirm) newErrors.isConfirm = "Нужно подтвердить участие";
+
     return newErrors;
   };
 
   const handleSubmit = async () => {
     const validationErrors = validate();
+
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       return;
     }
 
-    setErrors({});
+    //setErrors({});
     setIsLoading(true);
 
     const formData = new FormData();
@@ -98,11 +113,13 @@ const Questionnaire: FC = () => {
       if (label) formData.append("entry.162603456", label);
     });
 
-    if (form.customAlcohol) {
+    if (form.customAlcohol.trim()) {
       formData.append("entry.378707317", form.customAlcohol);
     }
 
-    formData.append("entry.982372463", form.favSong);
+    if (form.favSong.trim()) {
+      formData.append("entry.982372463", form.favSong);
+    }
 
     try {
       await fetch(formUrl, {
@@ -112,15 +129,7 @@ const Questionnaire: FC = () => {
       });
 
       setIsSubmitted(true);
-      setForm({
-        firstName: "",
-        secondName: "",
-        isConfirm: false,
-        transport: null,
-        alcohol: [],
-        customAlcohol: "",
-        favSong: "",
-      });
+      setForm(initialForm);
     } catch (error) {
       alert("Ошибка при отправке. Попробуйте снова.");
     } finally {
@@ -136,6 +145,7 @@ const Questionnaire: FC = () => {
             <AcceptData />
           </Modal>
         )}
+
         <div className={cls.form}>
           <div className={cls.title}>
             <p>Анкета гостя</p>
@@ -147,14 +157,14 @@ const Questionnaire: FC = () => {
               name="firstName"
               value={form.firstName}
               onChange={handleChange}
-              error={errors.firstName}
+              //error={errors.firstName}
             />
             <Input
               label="Фамилия"
               name="secondName"
               value={form.secondName}
               onChange={handleChange}
-              error={errors.secondName}
+              //error={errors.secondName}
             />
           </div>
 
@@ -163,7 +173,7 @@ const Questionnaire: FC = () => {
             name="isConfirm"
             checked={form.isConfirm}
             onChange={handleChange}
-            error={errors.isConfirm}
+            //error={errors.isConfirm}
           />
 
           <div className={cls.transport}>

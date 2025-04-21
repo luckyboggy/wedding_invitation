@@ -18,7 +18,7 @@ const schedule: TScheduleItem[] = [
   },
   {
     time: "11:30",
-    event: "ЦЕРЕМОНИЯ",
+    event: "РЕГИСТРАЦИЯ",
     description: "берем гортензии и платочки",
     status: "main",
   },
@@ -30,14 +30,14 @@ const schedule: TScheduleItem[] = [
     description: "располагаемся в домиках, отдыхаем",
   },
   {
-    time: "14:00",
+    time: "14:30",
     event: "WELCOME",
     status: "main",
     description: "фуршет, фото, разговорчики",
   },
   {
     time: "15:45",
-    event: "ВЫЕЗДНАЯ ЦЕРЕМОНИЯ",
+    event: "ВЫЕЗДНАЯ РЕГИСТРАЦИЯ",
     status: "main",
     description: "берем только платочки",
   },
@@ -58,18 +58,19 @@ const schedule: TScheduleItem[] = [
     description: "наслаждаемся чаем",
   },
   {
-    time: "22:00",
-    event: "ДИСКОТЕКА",
-    description: "танцуем до упаду",
-  },
-  {
-    time: "23:00",
+    time: "21:50",
     event: "ЗАВЕРШЕНИЕ ВЕЧЕРА",
     description: "делаем что то красивое и приятное",
     status: "main",
   },
   {
-    time: "23:30",
+    time: "22:00",
+    event: "ДИСКОТЕКА",
+    description: "танцуем до упаду",
+  },
+
+  {
+    time: "23:00",
     event: "АВТЕПАТИ",
     description: "вечеринка после вечеринки, для самый стойких",
   },
