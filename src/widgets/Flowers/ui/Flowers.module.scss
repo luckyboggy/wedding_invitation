@@ -68,11 +68,17 @@
       }
 
       .wishlist {
+        margin-top: 1rem;
+        .title {
+          font: var(--font-heading-l);
+        }
+        .listTitle {
+          margin-top: 1rem;
+        }
       }
       .antiWishlist {
         margin-top: 1rem;
         .title {
-
           font: var(--font-heading-l);
         }
         .listTitle {

@@ -60,7 +60,7 @@ const schedule: TScheduleItem[] = [
   {
     time: "21:50",
     event: "ЗАВЕРШЕНИЕ ВЕЧЕРА",
-    description: "делаем что то красивое и приятное",
+    //description: "делаем что то красивое и приятное",
     status: "main",
   },
   {

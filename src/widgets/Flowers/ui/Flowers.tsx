@@ -68,10 +68,11 @@ const Flowers: FC = () => {
             </p>
           </div>
           <div className={cls.wishlist}>
-            <p>
+            <div className={cls.title}>Вишлист</div>
+            <div className={cls.listTitle}>
               Мы будем в восторге от ваших творческих поздравлений! Подготовьте
               что-нибудь особенное для нас.
-            </p>
+            </div>
           </div>
           <div className={cls.antiWishlist}>
             <div className={cls.title}>Антивишлист</div>
