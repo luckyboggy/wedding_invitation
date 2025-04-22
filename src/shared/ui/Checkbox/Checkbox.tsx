@@ -5,10 +5,17 @@ type TCheckboxProps = {
   label: string;
   name: string;
   checked: boolean;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void | (() => void);
+  error?: string;
 };
 
-const Checkbox: FC<TCheckboxProps> = ({ label, name, checked, onChange }) => {
+const Checkbox: FC<TCheckboxProps> = ({
+  label,
+  name,
+  checked,
+  onChange,
+  error,
+}) => {
   return (
     <div className={cls.checkbox}>
       <input
@@ -19,6 +26,7 @@ const Checkbox: FC<TCheckboxProps> = ({ label, name, checked, onChange }) => {
         onChange={onChange}
       />
       <label htmlFor={label}>{label}</label>
+      {error && <div className={cls.error}>{error}</div>}
     </div>
   );
 };

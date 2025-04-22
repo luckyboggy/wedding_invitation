@@ -47,7 +47,9 @@ const initialForm: FormState = {
 
 const Questionnaire: FC = () => {
   const [form, setForm] = useState<FormState>(initialForm);
-  const [errors, setErrors] = useState<Record<keyof FormState, string>>({} as any);
+  const [errors, setErrors] = useState<
+    Partial<Record<keyof FormState, string>>
+  >({});
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -58,6 +60,14 @@ const Questionnaire: FC = () => {
       ...prev,
       [name]: type === "checkbox" ? checked : value,
     }));
+
+    if (errors[name as keyof FormState]) {
+      setErrors((prev) => {
+        const updatedErrors = { ...prev };
+        delete updatedErrors[name as keyof FormState];
+        return updatedErrors;
+      });
+    }
   };
 
   const handleTransportChange = (option: "withCar" | "needTransfer") => {
@@ -82,6 +92,7 @@ const Questionnaire: FC = () => {
     if (!form.firstName.trim()) newErrors.firstName = "Введите имя";
     if (!form.secondName.trim()) newErrors.secondName = "Введите фамилию";
     if (!form.isConfirm) newErrors.isConfirm = "Нужно подтвердить участие";
+    if (!form.favSong.trim()) newErrors.favSong = "Введите любимую песню"; // ← добавлено
 
     return newErrors;
   };
@@ -94,7 +105,7 @@ const Questionnaire: FC = () => {
       return;
     }
 
-    //setErrors({});
+    setErrors({});
     setIsLoading(true);
 
     const formData = new FormData();
@@ -157,14 +168,14 @@ const Questionnaire: FC = () => {
               name="firstName"
               value={form.firstName}
               onChange={handleChange}
-              //error={errors.firstName}
+              error={errors.firstName}
             />
             <Input
               label="Фамилия"
               name="secondName"
               value={form.secondName}
               onChange={handleChange}
-              //error={errors.secondName}
+              error={errors.secondName}
             />
           </div>
 
@@ -173,7 +184,7 @@ const Questionnaire: FC = () => {
             name="isConfirm"
             checked={form.isConfirm}
             onChange={handleChange}
-            //error={errors.isConfirm}
+            error={errors.isConfirm}
           />
 
           <div className={cls.transport}>
@@ -223,15 +234,12 @@ const Questionnaire: FC = () => {
               name="favSong"
               value={form.favSong}
               onChange={handleChange}
+              error={errors.favSong} // ← добавлено
             />
           </fieldset>
 
           <div className={cls.btn}>
-            <button
-              type="button"
-              onClick={handleSubmit}
-              disabled={isLoading}
-            >
+            <button type="button" onClick={handleSubmit} disabled={isLoading}>
               {isLoading ? "Отправка..." : "Отправить"}
             </button>
           </div>

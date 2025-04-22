@@ -1,8 +1,7 @@
 .textInput {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   display: flex;
   flex-direction: column;
-  //gap: 0.5rem;
   font: var(--font-text-m);
 
   input {
@@ -10,5 +9,11 @@
     font: var(--font-text-m);
     border: 1px solid var(--primary-font-color);
     border-radius: 5px;
+  }
+
+  .error {
+    height: 16px;
+    color: red;
+    font-size: 12px;
   }
 }
