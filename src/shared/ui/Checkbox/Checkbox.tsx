@@ -7,6 +7,7 @@ type TCheckboxProps = {
   checked: boolean;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void | (() => void);
   error?: string;
+  withError?: boolean;
 };
 
 const Checkbox: FC<TCheckboxProps> = ({
@@ -15,18 +16,21 @@ const Checkbox: FC<TCheckboxProps> = ({
   checked,
   onChange,
   error,
+  withError = false,
 }) => {
   return (
     <div className={cls.checkbox}>
-      <input
-        type="checkbox"
-        id={label}
-        name={name}
-        checked={checked}
-        onChange={onChange}
-      />
-      <label htmlFor={label}>{label}</label>
-      {error && <div className={cls.error}>{error}</div>}
+      <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+        <input
+          type="checkbox"
+          id={label}
+          name={name}
+          checked={checked}
+          onChange={onChange}
+        />
+        <label htmlFor={label}>{label}</label>
+      </div>
+      {withError && <div className={cls.error}>{error || "\u00A0"}</div>}
     </div>
   );
 };

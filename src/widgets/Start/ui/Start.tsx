@@ -9,7 +9,12 @@ const Start: FC = () => {
 
   return (
     <div className={cls.start}>
-      <img src={mainImage} alt="Main image" onLoad={() => setLoading(false)} />
+      <img
+        src={mainImage}
+        loading="lazy"
+        alt="Main image"
+        onLoad={() => setLoading(false)}
+      />
 
       {!loading && (
         <>

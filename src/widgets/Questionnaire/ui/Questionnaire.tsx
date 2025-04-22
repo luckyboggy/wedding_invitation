@@ -1,4 +1,4 @@
-import { FC, useState, ChangeEvent } from "react";
+import { FC, useState, ChangeEvent, useEffect } from "react";
 import cls from "./Questionnaire.module.scss";
 import Input from "src/shared/ui/Input/Input";
 import Checkbox from "src/shared/ui/Checkbox/Checkbox";
@@ -52,6 +52,7 @@ const Questionnaire: FC = () => {
   >({});
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [hasSubmitError, setHasSubmitError] = useState(false);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
@@ -62,11 +63,10 @@ const Questionnaire: FC = () => {
     }));
 
     if (errors[name as keyof FormState]) {
-      setErrors((prev) => {
-        const updatedErrors = { ...prev };
-        delete updatedErrors[name as keyof FormState];
-        return updatedErrors;
-      });
+      setErrors((prev) => ({
+        ...prev,
+        [name]: undefined,
+      }));
     }
   };
 
@@ -92,7 +92,7 @@ const Questionnaire: FC = () => {
     if (!form.firstName.trim()) newErrors.firstName = "Введите имя";
     if (!form.secondName.trim()) newErrors.secondName = "Введите фамилию";
     if (!form.isConfirm) newErrors.isConfirm = "Нужно подтвердить участие";
-    if (!form.favSong.trim()) newErrors.favSong = "Введите любимую песню"; // ← добавлено
+    if (!form.favSong.trim()) newErrors.favSong = "Введите любимую песню";
 
     return newErrors;
   };
@@ -102,10 +102,12 @@ const Questionnaire: FC = () => {
 
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
+      setHasSubmitError(true);
       return;
     }
 
     setErrors({});
+    setHasSubmitError(false);
     setIsLoading(true);
 
     const formData = new FormData();
@@ -128,9 +130,7 @@ const Questionnaire: FC = () => {
       formData.append("entry.378707317", form.customAlcohol);
     }
 
-    if (form.favSong.trim()) {
-      formData.append("entry.982372463", form.favSong);
-    }
+    formData.append("entry.982372463", form.favSong);
 
     try {
       await fetch(formUrl, {
@@ -147,6 +147,18 @@ const Questionnaire: FC = () => {
       setIsLoading(false);
     }
   };
+
+  useEffect(() => {
+    const allValid =
+      form.firstName.trim() &&
+      form.secondName.trim() &&
+      form.favSong.trim() &&
+      form.isConfirm;
+
+    if (allValid) {
+      setHasSubmitError(false);
+    }
+  }, [form]);
 
   return (
     <div className={cls.questionnaire}>
@@ -185,6 +197,7 @@ const Questionnaire: FC = () => {
             checked={form.isConfirm}
             onChange={handleChange}
             error={errors.isConfirm}
+            withError={true}
           />
 
           <div className={cls.transport}>
@@ -234,7 +247,7 @@ const Questionnaire: FC = () => {
               name="favSong"
               value={form.favSong}
               onChange={handleChange}
-              error={errors.favSong} // ← добавлено
+              error={errors.favSong}
             />
           </fieldset>
 
@@ -242,6 +255,9 @@ const Questionnaire: FC = () => {
             <button type="button" onClick={handleSubmit} disabled={isLoading}>
               {isLoading ? "Отправка..." : "Отправить"}
             </button>
+            <div className={cls.submitError}>
+              {hasSubmitError && "Заполните все поля"}
+            </div>
           </div>
         </div>
       </div>
