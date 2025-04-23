@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Greating from "widgets/Greetings/ui/Greating";
 import Timer from "widgets/Timer/ui/Timer";
 import DressCode from "widgets/DressCode/ui/DressCode";
@@ -15,29 +16,49 @@ import AreaRules from "src/widgets/AreaRules/ui/AreaRules";
 import SecondDay from "src/widgets/SecondDay/ui/SecondDay";
 import DividingLine from "src/shared/ui/DividingLine/DividingLine";
 
+// Импортируем изображение сюда
+import mainImage from "shared/assets/images/main_01.jpg";
+
 export default function MainPage() {
+  const [loaded, setLoaded] = useState(false);
+
   return (
-    <div className={cls.main}>
-      <div className={cls.container}>
-        <Start />
-        <Greating />
-        <Timer />
-        <TimeLine />
-        <Questionnaire />
-        <DressCode />
-        <Flowers />
-        <Locations />
-        <AreaRules />
-        <SecondDay />
-        <br/>
-        <DividingLine />
-        <Contacts />
-        <br/>
-        <DividingLine />
-        <Final />
-        {/* <Accommodation />
-        <Wishlist /> */}
-      </div>
-    </div>
+    <>
+      {!loaded && (
+        <div className={cls.loader}>
+          <div className={cls.spinner}></div>
+        </div>
+      )}
+
+      <img
+        src={mainImage}
+        onLoad={() => setLoaded(true)}
+        alt="preload"
+        style={{ display: "none" }}
+      />
+
+      {loaded && (
+        <div className={cls.main}>
+          <div className={cls.container}>
+            <Start />
+            <Greating />
+            <Timer />
+            <TimeLine />
+            <Questionnaire />
+            <DressCode />
+            <Flowers />
+            <Locations />
+            <AreaRules />
+            <SecondDay />
+            <br />
+            <DividingLine />
+            <Contacts />
+            <br />
+            <DividingLine />
+            <Final />
+          </div>
+        </div>
+      )}
+    </>
   );
 }

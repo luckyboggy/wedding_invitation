@@ -8,8 +8,6 @@ import img4 from "shared/assets/images/dressCode/dc_4.jpg";
 import img5 from "shared/assets/images/dressCode/dc_5.jpg";
 import img6 from "shared/assets/images/dressCode/dc_6.jpg";
 
-
-
 const images = [img1, img2, img3, img4, img5, img6];
 
 const Carousel = () => {
@@ -82,7 +80,12 @@ const Carousel = () => {
       >
         {images.map((image, index) => (
           <div key={index} className={cls.slide}>
-            <img src={image} alt={`Slide ${index + 1}`} className={cls.image} />
+            <img
+              src={image}
+              alt={`Slide ${index + 1}`}
+              className={cls.image}
+              loading="lazy"
+            />
           </div>
         ))}
       </div>
