@@ -29,10 +29,19 @@
     }
     .content {
       margin-top: 1rem;
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      transition: max-height 0.5s ease, opacity 0.5s ease;
+      will-change: max-height, opacity;
       //padding: 1rem;
       img {
         width: 100%;
       }
+    }
+    .open {
+      max-height: 20000px;
+      opacity: 1;
     }
   }
 }

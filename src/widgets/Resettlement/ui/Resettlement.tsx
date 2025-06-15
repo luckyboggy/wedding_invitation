@@ -3,6 +3,8 @@ import cls from "./Resettlement.module.scss";
 
 import resett from "shared/assets/images/resett.jpg";
 
+import ArrowIcon from "shared/assets/images/svg/arrow.svg?react";
+
 const Resettlement: FC = () => {
   const [show, setShow] = useState(false);
 
@@ -14,7 +16,7 @@ const Resettlement: FC = () => {
       <div className={cls.wrapper}>
         <div className={cls.title} onClick={showToggle}>
           <p>Расселение</p>
-          {/* <ArrowIcon className={`${cls.arrow} ${show ? cls.rotate : ""}`} /> */}
+          <ArrowIcon className={`${cls.arrow} ${show ? cls.rotate : ""}`} />
         </div>
         <div className={`${cls.content} ${show ? cls.open : ""}`}>
           {/* <div className={cls.carsList}>
