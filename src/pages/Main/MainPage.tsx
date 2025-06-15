@@ -6,6 +6,7 @@ import TimeLine from "widgets/TimeLine/ui/TimeLine";
 import Locations from "widgets/Locations/ui/locations/Locations";
 import Accommodation from "widgets/Accommodation/ui/Accommodation";
 import Wishlist from "widgets/Wishlist/ui/Wishlist";
+import Cars from "src/widgets/Cars/ui/Cars";
 import cls from "./MainPage.module.scss";
 import Start from "widgets/Start/ui/Start";
 import Questionnaire from "widgets/Questionnaire/ui/Questionnaire";
@@ -18,6 +19,7 @@ import DividingLine from "src/shared/ui/DividingLine/DividingLine";
 
 // Импортируем изображение сюда
 import mainImage from "shared/assets/images/main_01.jpg";
+import Resettlement from "src/widgets/Resettlement/ui/Resettlement";
 
 export default function MainPage() {
   const [loaded, setLoaded] = useState(false);
@@ -44,10 +46,12 @@ export default function MainPage() {
             <Greating />
             <Timer />
             <TimeLine />
-            <Questionnaire />
+            {/* <Questionnaire /> */}
             <DressCode />
             <Flowers />
             <Locations />
+            <Cars />
+            <Resettlement />
             <AreaRules />
             <SecondDay />
             <br />

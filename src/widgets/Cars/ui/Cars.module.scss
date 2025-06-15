@@ -1,0 +1,38 @@
+.cars {
+  margin-top: 2rem;
+  .wrapper {
+    color: var(--primary-font-color);
+    .title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      cursor: pointer;
+
+      p {
+        text-align: center;
+        font: var(--font-heading-xl);
+        text-transform: uppercase;
+      }
+
+      .arrow {
+        height: 30px;
+        width: 30px;
+        fill: var(--primary-font-color);
+        transform: rotate(180deg);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .rotate {
+        transform: rotate(0deg);
+      }
+    }
+    .content {
+      margin-top: 1rem;
+      //padding: 1rem;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
